@@ -36,17 +36,16 @@ function getRandomQuote() {
 function printQuote() {
   let randomQuote = getRandomQuote();
   let htmlString = ''
-  htmlString += "<p class='quote'>" + randomQuote.quote + "</p>" 
-  htmlString += "<p class='source'>" + randomQuote.source
-  if (randomQuote.citation != undefined && randomQuote.year != undefined) {
-    htmlString += "<span class='citation'>" + randomQuote.citation + "</span><span class='year'>" + randomQuote.year + "</span></p>";
-  } else if (randomQuote.citation === undefined && randomQuote.year != undefined) {
-    htmlString += "<span class='year'>" + randomQuote.year + "</span></p>"
-  } else if (randomQuote.citation != undefined && randomQuote.year === undefined) {
-    htmlString += "<span class='citation'>" + randomQuote.citation + "</span></p>"
-  } else {
-    htmlString += "</p>"
+  htmlString += '<p class="quote">' + randomQuote.quote + '</p>'
+  htmlString += '<p class="source">' + randomQuote.source
+  if (randomQuote.citation && randomQuote.year) {
+    htmlString += '<span class="citation">' + randomQuote.citation + '</span><span class="year">' + randomQuote.year + '</span>';
+  } else if (randomQuote.citation === undefined && randomQuote.year) {
+    htmlString += '<span class="year">' + randomQuote.year + '</span>'
+  } else if (randomQuote.citation && randomQuote.year === undefined) {
+    htmlString += '<span class="citation">' + randomQuote.citation + '</span>'
   }
+  htmlString += '</p>'
   const quoteBox = document.getElementById('quote-box');
     quoteBox.innerHTML = htmlString;
   };
