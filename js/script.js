@@ -28,24 +28,24 @@ const quotes = [
 
 //Chooses a random quote from the list
 function getRandomQuote() {
-  let randomNum = Math.floor(Math.random() * 5);
+  let randomNum = Math.floor(Math.random() * quotes.length);
   return quotes[randomNum];
 };
 
 //Displays random quote on page
 function printQuote() {
   let randomQuote = getRandomQuote();
-  let htmlString = ''
-  htmlString += '<p class="quote">' + randomQuote.quote + '</p>'
-  htmlString += '<p class="source">' + randomQuote.source
+  let htmlString = '';
+  htmlString += '<p class="quote">' + randomQuote.quote + '</p>';
+  htmlString += '<p class="source">' + randomQuote.source;
   if (randomQuote.citation && randomQuote.year) {
     htmlString += '<span class="citation">' + randomQuote.citation + '</span><span class="year">' + randomQuote.year + '</span>';
   } else if (randomQuote.citation === undefined && randomQuote.year) {
-    htmlString += '<span class="year">' + randomQuote.year + '</span>'
+    htmlString += '<span class="year">' + randomQuote.year + '</span>';
   } else if (randomQuote.citation && randomQuote.year === undefined) {
-    htmlString += '<span class="citation">' + randomQuote.citation + '</span>'
-  }
-  htmlString += '</p>'
+    htmlString += '<span class="citation">' + randomQuote.citation + '</span>';
+  };
+  htmlString += '</p>';
   const quoteBox = document.getElementById('quote-box');
     quoteBox.innerHTML = htmlString;
   };
