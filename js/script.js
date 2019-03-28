@@ -47,7 +47,7 @@ function printQuote() {
   };
   htmlString += '</p>';
   const quoteBox = document.getElementById('quote-box');
-    quoteBox.innerHTML = htmlString;
+  quoteBox.innerHTML = htmlString;
   };
 
 //BUTTON CLICK EVENT USED TO DISPLAY NEXT QUOTE, CREDIT: TEAM TREEHOUSE
